@@ -1,0 +1,156 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+             x:Class="BMICalculator.MainPage"
+             Shell.NavBarIsVisible="false" >
+
+    <Grid RowDefinitions="*, Auto">
+        <Border Grid.Row="0"
+                Padding="20"
+                StrokeThickness="0"
+                StrokeShape="RoundRectangle 0, 0, 25, 25">
+            <Border.Background>
+                <LinearGradientBrush EndPoint="0,1">
+                    <GradientStop Color="#e95263" Offset="0.1"/>
+                    <GradientStop Color="BlueViolet" Offset="1.0"/>
+                </LinearGradientBrush>
+            </Border.Background>
+
+            <VerticalStackLayout Spacing="20">
+                <Label Text="GENDER"
+                       TextColor="#fff"
+                       HorizontalOptions="Center"
+                       FontAttributes="Bold"/>
+                
+                <Grid ColumnDefinitions="*,*"
+                      ColumnSpacing="15">
+                    <Border Grid.Column="0"
+                            BackgroundColor="White"
+                            StrokeShape="RoundRectangle 25"
+                            StrokeThickness="0"
+                            Padding="20, 10">
+                        <HorizontalStackLayout HorizontalOptions="Center"
+                                               Spacing="10">
+                            <Image Source="male"
+                                   HeightRequest="20"
+                                   WidthRequest="20">
+                                <Image.Behaviors>
+                                    <toolkit:IconTintColorBehavior TintColor="#e95263"/>
+                                </Image.Behaviors>
+                            </Image>
+                            <Label Text="Male"
+                                   FontAttributes="Bold"
+                                   TextColor="#e95263"/>
+                        </HorizontalStackLayout>
+                    </Border>
+                    <Border Grid.Column="1"
+                            BackgroundColor="#f2a59e"
+                            StrokeShape="RoundRectangle 25"
+                            Padding="20, 10"
+                            StrokeThickness="0">
+                        <HorizontalStackLayout HorizontalOptions="Center"
+                                               Spacing="10">
+
+                            <Image Source="Female"
+                                   HeightRequest="20"
+                                   WidthRequest="20">
+                                <Image.Behaviors>
+                                    <toolkit:IconTintColorBehavior TintColor="White"/>
+                                </Image.Behaviors>
+                            </Image>
+
+                            
+                            <Label Text="Female"
+                                   FontAttributes="Bold"
+                                   TextColor="White"/>
+                        </HorizontalStackLayout>
+                    </Border>
+
+                </Grid>
+                <!--controleur de taille-->
+                <Label Text="HEIGHT"
+                       TextColor="#fff"
+                       HorizontalOptions="Center"
+                       FontAttributes="Bold"
+                       Margin="0, 20, 0, 0"/>
+              
+                <Border Grid.Column="1"
+                            BackgroundColor="#f2a59e"
+                            StrokeShape="RoundRectangle 25"
+                            Padding="20, 10"
+                            StrokeThickness="0"
+                        HorizontalOptions="Center">
+
+                    <Label Text="{Binding Source={x:Reference heightSlider},
+                        Path=Value,
+                        StringFormat='{0:F0} cm'}"
+                       TextColor="#fff"
+                       HorizontalOptions="Center"
+                       FontAttributes="Bold"/>
+
+                </Border>
+
+                <Slider x:Name="heightSlider"
+                        ThumbColor="White"
+                        MinimumTrackColor="Bisque"
+                        MaximumTrackColor="White"
+                        Minimum="10"
+                        Maximum="250"
+                        Value="50"/>
+
+                <!--controleur de poids-->
+                <Label Text="WEIGHT"
+                       TextColor="#fff"
+                       HorizontalOptions="Center"
+                       FontAttributes="Bold"
+                       Margin="0, 20, 0, 0"/>
+
+                <Border Grid.Column="1"
+                            BackgroundColor="#f2a59e"
+                            StrokeShape="RoundRectangle 25"
+                            Padding="20, 10"
+                            StrokeThickness="0"
+                        HorizontalOptions="Center">
+
+                    <Label Text="{Binding Source={x:Reference WeightSlider},
+                        Path=Value,
+                        StringFormat='{0:F0} kg'}"
+                       TextColor="#fff"
+                       HorizontalOptions="Center"
+                       FontAttributes="Bold"/>
+
+                </Border>
+
+                <Slider x:Name="WeightSlider"
+                        ThumbColor="White"
+                        MinimumTrackColor="Bisque"
+                        MaximumTrackColor="White"
+                        Minimum="10"
+                        Maximum="150"
+                        Value="50"/>
+                
+                <!--bouton de validation-->
+                <ImageButton Source="arrow"
+                            HeightRequest="100"
+                             WidthRequest="100"
+                             BackgroundColor="WhiteSmoke"
+                             CornerRadius="50"
+                             Padding="20"
+                             VerticalOptions="End"
+                             HorizontalOptions="End"/>
+
+
+            </VerticalStackLayout>
+        </Border>
+
+        <VerticalStackLayout Grid.Row="1">
+            <Label Text="test"/>
+            <Label Text="test"/>
+            <Label Text="test"/>
+            <Label Text="test"/>
+            <Label Text="test"/>
+        </VerticalStackLayout>
+    </Grid>
+
+</ContentPage>
