@@ -130,26 +130,40 @@
                         Maximum="150"
                         Value="50"/>
                 
-                <!--bouton de validation-->
-                <ImageButton Source="arrow"
-                            HeightRequest="100"
-                             WidthRequest="100"
-                             BackgroundColor="WhiteSmoke"
-                             CornerRadius="50"
-                             Padding="20"
-                             VerticalOptions="End"
-                             HorizontalOptions="End"/>
+
 
 
             </VerticalStackLayout>
         </Border>
 
-        <VerticalStackLayout Grid.Row="1">
+        <!--bouton de validation-->
+        <ImageButton Grid.Row="1" 
+                     Source="arrow"
+                     HeightRequest="150"
+                     WidthRequest="150"
+                     BackgroundColor="WhiteSmoke"
+                     CornerRadius="55"
+                     Padding="20"
+                     VerticalOptions="End"
+                     HorizontalOptions="End"
+                     Margin ="0,-50, 0, 0">
+            <ImageButton.Shadow>
+                <Shadow Brush="#f2a59e"
+                        Radius="55"
+                        Offset="5, 5"/>
+            </ImageButton.Shadow>
+
+            <ImageButton.Behaviors>
+                <toolkit:IconTintColorBehavior TintColor="#f2a59e"/>
+            </ImageButton.Behaviors>
+
+        </ImageButton>
+
+
+        <VerticalStackLayout Grid.Row="2"
+                             Padding="25">
             <Label Text="test"/>
-            <Label Text="test"/>
-            <Label Text="test"/>
-            <Label Text="test"/>
-            <Label Text="test"/>
+
         </VerticalStackLayout>
     </Grid>
 
