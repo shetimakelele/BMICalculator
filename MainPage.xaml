@@ -5,11 +5,11 @@
              x:Class="BMICalculator.MainPage"
              Shell.NavBarIsVisible="false" >
 
-    <Grid RowDefinitions="*, Auto">
+    <Grid RowDefinitions="*, Auto, Auto">
         <Border Grid.Row="0"
                 Padding="20"
                 StrokeThickness="0"
-                StrokeShape="RoundRectangle 0, 0, 25, 25">
+                StrokeShape="RoundRectangle 0, 0, 90, 15">
             <Border.Background>
                 <LinearGradientBrush EndPoint="0,1">
                     <GradientStop Color="#e95263" Offset="0.1"/>
@@ -141,12 +141,13 @@
                      Source="arrow"
                      HeightRequest="150"
                      WidthRequest="150"
-                     BackgroundColor="WhiteSmoke"
+                     BackgroundColor="White"
                      CornerRadius="55"
                      Padding="20"
                      VerticalOptions="End"
-                     HorizontalOptions="End"
-                     Margin ="0,-50, 0, 0">
+                     HorizontalOptions="Center"
+                     Margin ="0,-75, 0, 0"
+                     Pressed="CalculateBMI_Pressed">
             <ImageButton.Shadow>
                 <Shadow Brush="#f2a59e"
                         Radius="55"
@@ -161,10 +162,12 @@
 
 
         <VerticalStackLayout Grid.Row="2"
-                             Padding="25">
-            <Label Text="test"/>
+                             Padding="35"
+                             Spacing="20">
+            <Label Text="Lorem macin bidule"/>
 
         </VerticalStackLayout>
+
     </Grid>
 
 </ContentPage>
